@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container footer">
     <hr>
     <footer>
       <div class="row">
@@ -18,5 +18,10 @@
 </script>
 
 <style scoped>
-
+.footer {
+  margin-top: 20px;
+}
+footer {
+  margin-top: 20px;
+}
 </style>

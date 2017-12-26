@@ -1,13 +1,13 @@
 <template>
   <div id="app">
     <nav-bar></nav-bar>
-    <div class="container">
+    <div class="container main-content">
       <div class="col-md-3">
         <search></search>
       </div>
       <div class="col-md-9">
         <div class="row">
-          <carousel></carousel>
+          <app-carousel></app-carousel>
         </div>
         <div class="row">
           <product></product>
@@ -29,20 +29,15 @@ export default {
   components: {
     NavBar,
     Search,
-    Carousel,
     Product,
+    'app-carousel': Carousel,
     'app-footer': Footer
   }
 }
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+.main-content {
+  margin-top: 80px;
 }
 </style>
