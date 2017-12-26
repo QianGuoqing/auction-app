@@ -1,7 +1,23 @@
 <template>
-  <div>
-
-  </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collpase">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a href="" class="navbar-brand">在线竞拍</a>
+      </div>
+      <div class="collapse navbar-collapse navbar-ex1-collpase">
+        <ul class="nav navbar-nav">
+          <li><a href="#">关于我们</a></li>
+          <li><a href="#">联系我们</a></li>
+          <li><a href="#">网站地图</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 </template>
 
 <script>
