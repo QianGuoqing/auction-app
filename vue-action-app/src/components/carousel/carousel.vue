@@ -29,5 +29,11 @@
 </script>
 
 <style scoped>
+.demo-carousel {
+  width: 100%;
+}
 
+.demo-carousel img {
+  width: 100%;
+}
 </style>
