@@ -5,7 +5,9 @@
         <img :src="imgUrl" alt="">
         <div class="caption">
           <h4 class="pull-right">{{ product.price }}</h4>
-          <h4><a href="#">{{ product.title }}</a></h4>
+          <h4>
+            <router-link :to="{name: 'product', params: {productName: product.title}}">{{ product.title }}</router-link>
+          </h4>
           <p>{{ product.desc }}</p>
         </div>
         <div>
@@ -52,5 +54,9 @@
 .thumbnail:hover {
   transform: translateY(-2px);
   box-shadow: 0 2px 5px #ccc;
+}
+
+.caption h4 {
+  margin-bottom: 10px;
 }
 </style>

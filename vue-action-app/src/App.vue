@@ -5,20 +5,14 @@
       <div class="col-md-3">
         <search></search>
       </div>
-      <div class="col-md-9">
-        <div class="row">
-          <app-carousel></app-carousel>
-        </div>
-        <div class="row">
-          <product></product>
-        </div>
-      </div>
+      <router-view></router-view>
     </div>
     <app-footer></app-footer>
   </div>
 </template>
 
 <script>
+import Home from './components/home/home'
 import NavBar from './components/navbar/navbar'
 import Footer from './components/footer/footer'
 import Search from './components/search/search'
@@ -27,6 +21,7 @@ import Product from './components/product/product'
 export default {
   name: 'app',
   components: {
+    Home,
     NavBar,
     Search,
     Product,
