@@ -1,6 +1,7 @@
 <template>
   <div>
     <Rate :disabled="isDisable" allow-half v-model="rating"></Rate>
+    <span>{{ rating }}星</span>
   </div>
 </template>
 

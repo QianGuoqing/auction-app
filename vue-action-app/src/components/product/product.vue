@@ -18,7 +18,7 @@
           <p>{{ product.desc }}</p>
         </div>
         <div>
-          <stars :isDisable="true" :rating="product.rating"></stars>
+          <stars :isDisable="true" :rating="newRatings"></stars>
         </div>
       </div>
     </div>
@@ -27,7 +27,7 @@
 
 <script>
 
-  import { mapState } from 'vuex'
+  import { mapState, mapGetters } from 'vuex'
 
   import Stars from '../stars/stars.vue'
 
@@ -44,7 +44,10 @@
       ]),
       filterdProducts() {
         return this.products.filter(product => product.title.indexOf(this.keyword) >= 0)
-      }
+      },
+      ...mapGetters([
+        'newRatings'
+      ])
     },
     components: {
       Stars

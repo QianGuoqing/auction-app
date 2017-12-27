@@ -10,12 +10,26 @@
       <div>
         <p class="pull-right">{{ comments.length }}</p>
         <p>
-          <stars :rating="products[productId].rating" :is-disable="true"></stars>
+          <stars :rating="newRatings" :is-disable="true"></stars>
         </p>
       </div>
     </div>
 
     <div class="well">
+      <section class="comment-section">
+        <div class="form-group">
+          <button class="btn btn-success" @click="isDisplay = true">发表评论</button>
+        </div>
+        <div class="comment-wrapper" v-if="isDisplay">
+          <div>
+            <Rate allow-half v-model="userRating"></Rate>
+          </div>
+          <div class="form-group">
+            <textarea v-model="userComment" rows="6" class="form-control"></textarea>
+          </div>
+          <button class="btn btn-default" @click="addNewComment">提交</button>
+        </div>
+      </section>
       <div class="row" v-for="comment in comments" :key="comment.id">
         <hr>
         <div class="col-md-12">
@@ -32,14 +46,40 @@
 
 <script>
 
-  import { mapState } from 'vuex'
+  import { mapState, mapMutations, mapGetters } from 'vuex'
   import Stars from '../stars/stars.vue'
 
   export default {
+    data () {
+      return {
+        userRating: 0,
+        userComment: '',
+        isDisplay: false
+      }
+    },
+    methods: {
+      addNewComment() {
+        this.$store.commit('addNewComment', {
+          id: Math.random() * 9999,
+          productId: 1,
+          timestamp: new Date().toLocaleTimeString(),
+          user: '匿名',
+          rating: this.userRating,
+          content: this.userComment
+        })
+
+        this.userRating = 0
+        this.userComment = ''
+        this.isDisplay = false
+      }
+    },
     computed: {
       ...mapState([
         'products',
         'comments'
+      ]),
+      ...mapGetters([
+        'newRatings'
       ]),
       productId() {
         return this.$route.params.productId
@@ -52,5 +92,7 @@
 </script>
 
 <style scoped>
-
+.comment-section {
+  margin-bottom: 20px;
+}
 </style>

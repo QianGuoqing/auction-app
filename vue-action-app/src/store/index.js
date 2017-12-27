@@ -107,10 +107,18 @@ const store = new Vuex.Store({
     ]
   },
   mutations: {
-
+    addNewComment(state, payload) {
+      state.comments.unshift(payload)
+    }
   },
   getters: {
-
+    newRatings(state) {
+      let sum = 0
+      state.comments.forEach(comment => {
+        sum += comment.rating
+      })
+      return parseFloat((sum / state.comments.length).toFixed(2))
+    }
   },
   actions: {
 
