@@ -54,6 +54,56 @@ const store = new Vuex.Store({
         desc: '这是第六个商品，Vue实战创建的',
         categories: ['电子产品', '硬件']
       }
+    ],
+    comments: [
+      { 
+        id: 1,
+        productId: 1,
+        timestamp: '2017-01-01 01:01:01',
+        user: '张三',
+        rating: 3,
+        content: '东西不错'
+      },
+      { 
+        id: 2,
+        productId: 1,
+        timestamp: '2017-02-02 02:02:02',
+        user: '李四',
+        rating: 2,
+        content: '东西不错'
+      },
+      { 
+        id: 3,
+        productId: 2,
+        timestamp: '2017-03-03 03:03:03',
+        user: '王五',
+        rating: 1,
+        content: '东西不错'
+      },
+      { 
+        id: 4,
+        productId: 2,
+        timestamp: '2017-04-04 04:04:04',
+        user: '赵六',
+        rating: 5,
+        content: '东西不错'
+      },
+      { 
+        id: 5,
+        productId: 3,
+        timestamp: '2017-05-05 05:05:05',
+        user: '张三三',
+        rating: 3,
+        content: '东西不错'
+      },
+      { 
+        id: 6,
+        productId: 3,
+        timestamp: '2017-06-06 06:06:06',
+        user: '李四四',
+        rating: 2,
+        content: '东西不错'
+      },
     ]
   },
   mutations: {

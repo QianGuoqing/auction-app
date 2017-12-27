@@ -6,7 +6,7 @@
         <div class="caption">
           <h4 class="pull-right">{{ product.price }}</h4>
           <h4>
-            <router-link :to="{name: 'product', params: {productName: product.title}}">{{ product.title }}</router-link>
+            <router-link :to="{name: 'product', params: {productId: product.id}}">{{ product.title }}</router-link>
           </h4>
           <p>{{ product.desc }}</p>
         </div>
