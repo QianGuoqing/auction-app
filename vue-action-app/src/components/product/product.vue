@@ -1,6 +1,13 @@
 <template>
   <div class="product">
-    <div v-for="product in products" :key="product.id" class="col-md-4 col-sm-4 col-lg-4 product-item">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="输入搜索商品名" v-model="keyword">
+        </div>
+      </div>
+    </div>
+    <div v-for="product in filterdProducts" :key="product.id" class="col-md-4 col-sm-4 col-lg-4 product-item">
       <div class="thumbnail">
         <img :src="imgUrl" alt="">
         <div class="caption">
@@ -27,13 +34,17 @@
   export default {
     data() {
       return {
-        imgUrl: 'http://placehold.it/320x150'
+        imgUrl: 'http://placehold.it/320x150',
+        keyword: ''
       }
     },
     computed: {
       ...mapState([
         'products'
-      ])
+      ]),
+      filterdProducts() {
+        return this.products.filter(product => product.title.indexOf(this.keyword) >= 0)
+      }
     },
     components: {
       Stars
